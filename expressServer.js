@@ -5,11 +5,15 @@ import { readPetsFile } from "./shared.js";
 import { userInfo } from "os";
 import express from "express";
 import { error } from "console";
+
+
 console.log(process.argv)
 //so, i used thunderclient to get the results, will not work in terminal??? could use process.argv.
 //globals
 const app = express();
 app.use(express.json());
+
+
 //general get for entire obj
 app.get("/pets", (req, res) => {
   readPetsFile().then((data) => {
